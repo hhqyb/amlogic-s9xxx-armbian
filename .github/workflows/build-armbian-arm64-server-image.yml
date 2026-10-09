@@ -45,6 +45,7 @@ on:
           - aio-3399b
           - aio-3399c
           - aio-3399c-ai
+          - ai3399-c
           - bdkj-bd-one
           - bdy-g18-pro
           - bdy-g98
@@ -476,7 +477,7 @@ jobs:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rebuild Armbian for target boards
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: hhqyb/amlogic-s9xxx-armbian@main
         if: ${{ steps.clean.outputs.status == 'success' && !cancelled() }}
         with:
           build_target: armbian
